@@ -35,6 +35,7 @@ export const SOCIAL_LINKS = {
   linkedin:  'https://www.linkedin.com/in/sohail-shabbir-546a12375/',
   facebook:  'https://www.facebook.com/share/1aeJrN99UA/',
   instagram: 'https://www.instagram.com/sohailshabbir04',
+  whatsapp:  'https://wa.me/923291729925',
   tiktok:    'https://www.tiktok.com/@sohail.shabeer4',
   email:     'mailto:sohailshabbir2005@gmail.com',
 };
@@ -143,6 +144,7 @@ export const EDUCATION_DATA: EducationItem[] = [
 export const NAV_ITEMS: NavItem[] = [
   { label: 'Home',      targetId: 'home' },
   { label: 'About Me',  targetId: 'about' },
+  { label: 'Skills',    targetId: 'skills' },
   { label: 'Portfolio', targetId: 'portfolio' },
   { label: 'Contact',   targetId: 'contact' },
   {

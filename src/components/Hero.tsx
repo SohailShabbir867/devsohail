@@ -7,7 +7,22 @@ import {
   useReducedMotion,
 } from 'framer-motion';
 import { FiDownload, FiArrowDown, FiTerminal } from 'react-icons/fi';
-import { SITE_DATA, ROLES } from '../data/constants';
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaInstagram,
+  FaFacebookF,
+  FaWhatsapp,
+} from 'react-icons/fa';
+import { SITE_DATA, ROLES, SOCIAL_LINKS } from '../data/constants';
+
+const heroSocialLinks = [
+  { name: 'LinkedIn',  href: SOCIAL_LINKS.linkedin,  icon: FaLinkedinIn },
+  { name: 'GitHub',    href: SOCIAL_LINKS.github,    icon: FaGithub },
+  { name: 'Instagram', href: SOCIAL_LINKS.instagram, icon: FaInstagram },
+  { name: 'Facebook',  href: SOCIAL_LINKS.facebook,  icon: FaFacebookF },
+  { name: 'WhatsApp',  href: SOCIAL_LINKS.whatsapp,  icon: FaWhatsapp },
+];
 
 /* ── Subtle floating particles in Reeni crimson ── */
 const particles = [
@@ -267,12 +282,37 @@ const Hero = () => {
               </motion.a>
             </motion.div>
 
+            {/* Social Media Links Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              className="mt-6 flex flex-wrap items-center gap-3"
+              aria-label="Social media links"
+            >
+              {heroSocialLinks.map(({ name, href, icon: Icon }) => (
+                <motion.a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${SITE_DATA.name} on ${name}`}
+                  title={name}
+                  whileHover={shouldReduceMotion ? undefined : { y: -3, scale: 1.06 }}
+                  whileTap={{ scale: 0.94 }}
+                  className="focus-ring flex items-center justify-center w-11 h-11 rounded-full border border-white/15 bg-white/[0.03] text-[#CFD0D4] hover:border-[#FF014F] hover:bg-[#FF014F]/15 hover:text-[#FF014F] hover:shadow-[0_0_22px_rgba(255,1,79,0.4)] transition-all duration-300"
+                >
+                  <Icon size={17} aria-hidden="true" />
+                </motion.a>
+              ))}
+            </motion.div>
+
             {/* Bottom-left: Scroll to Explore | (↓) */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.55, delay: 0.55 }}
-              className="mt-10 lg:mt-14 flex items-center"
+              className="mt-8 lg:mt-10 flex items-center"
             >
               <button
                 type="button"
