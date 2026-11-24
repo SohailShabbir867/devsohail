@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-accent-rgb: 255 1 79;
+    --color-accent-dark-rgb: 212 0 65;
+    --color-accent-light-rgb: 255 59 123;
+  }
+
   * {
     @apply box-border;
     scroll-behavior: smooth;
@@ -10,11 +16,11 @@
 
   body {
     @apply bg-dark text-white font-sans antialiased overflow-x-hidden;
-    background-color: #08080a;
+    background-color: #060608;
   }
 
   ::selection {
-    background-color: rgba(255, 102, 0, 0.3);
+    background-color: rgba(255, 1, 79, 0.35);
     color: #ffffff;
   }
 
@@ -22,20 +28,26 @@
     @apply w-1.5;
   }
   ::-webkit-scrollbar-track {
-    @apply bg-dark-200;
+    background-color: #17171d;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-accent rounded-full;
+    background-color: #FF014F;
+    border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-accent-light;
+    background-color: #FF3B7B;
   }
 }
 
 @layer components {
-  /* Orange glow button ripple effect */
+  /* Accessible focus ring token */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF014F] focus-visible:ring-offset-2 focus-visible:ring-offset-[#060608];
+  }
+
+  /* Crimson glow button ripple effect */
   .ripple-btn {
-    @apply relative overflow-hidden;
+    @apply relative overflow-hidden cursor-pointer;
   }
   .ripple-btn::after {
     content: '';
@@ -45,27 +57,43 @@
     @apply opacity-100;
   }
 
+  /* Icon-reverse hover animation inspired by reference UI */
+  .hover-icon-reverse {
+    @apply relative overflow-hidden inline-flex items-center;
+  }
+  .hover-icon-reverse .icon-slide {
+    @apply inline-flex items-center justify-center relative overflow-hidden w-4 h-4;
+  }
+  .hover-icon-reverse .icon-primary,
+  .hover-icon-reverse .icon-secondary {
+    @apply transition-transform duration-300 ease-out;
+  }
+  .hover-icon-reverse .icon-secondary {
+    @apply absolute -translate-x-5 opacity-0;
+  }
+  .hover-icon-reverse:hover .icon-primary {
+    @apply translate-x-5 opacity-0;
+  }
+  .hover-icon-reverse:hover .icon-secondary {
+    @apply translate-x-0 opacity-100;
+  }
+
   /* Gradient text for typewriter */
   .gradient-text {
-    background: linear-gradient(135deg, #FF6600 0%, #FF8533 50%, #FF9F43 100%);
+    background: linear-gradient(135deg, #FF014F 0%, #FF4D88 55%, #FF85AD 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Text shimmer on logo hover */
-  .text-shimmer {
-    background: linear-gradient(90deg, #FF6600, #FF8533, #FF6600);
-    background-size: 200%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: shimmer 2s linear infinite;
+  /* Outlined watermark stroke text behind/around portrait */
+  .text-outline-hero {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
   }
-
-  @keyframes shimmer {
-    0%   { background-position: 200% center; }
-    100% { background-position: -200% center; }
+  .text-outline-accent {
+    color: transparent;
+    -webkit-text-stroke: 1.5px rgba(255, 1, 79, 0.55);
   }
 }
 
@@ -79,11 +107,26 @@
   animation: orbFloat linear infinite;
 }
 
-/* Scroll indicator dot */
-@keyframes scrollDotAnim {
-  0%, 100% { transform: translateY(0); opacity: 1; }
-  50%       { transform: translateY(10px); opacity: 0.3; }
+/* Portrait halo subtle pulse */
+@keyframes haloPulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.04);
+  }
 }
-.animate-scroll-dot {
-  animation: scrollDotAnim 2s ease-in-out infinite;
+.animate-halo-pulse {
+  animation: haloPulse 4.5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

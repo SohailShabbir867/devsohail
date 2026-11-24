@@ -75,15 +75,15 @@ const Navbar = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-dark/85 backdrop-blur-xl shadow-2xl shadow-black/50 border-b border-white/[0.06]'
+        scrolled || isMenuOpen
+          ? 'bg-dark/95 backdrop-blur-xl shadow-2xl shadow-black/60 border-b border-white/[0.08]'
           : 'bg-transparent'
       }`}
     >
-      {/* Subtle scroll progress bar when scrolling */}
+      {/* Subtle scroll progress bar */}
       {scrollProgress > 1 && (
         <div
-          className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-accent via-accent-light to-accent transition-all duration-150"
+          className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#FF014F] via-[#FF3B7B] to-[#FF014F] transition-all duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       )}
@@ -95,24 +95,24 @@ const Navbar = () => {
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, 'home')}
-            className="relative z-10 flex items-center gap-2.5 group"
+            className="relative z-10 flex items-center gap-2.5 group focus-ring rounded-lg"
           >
             <motion.span
-              whileHover={{ scale: 1.06, rotate: -3 }}
-              transition={{ type: 'spring', stiffness: 320, damping: 18 }}
-              className="flex items-center justify-center w-8 h-8 rounded-[8px] border-[1.75px] border-accent bg-accent/10 text-accent font-extrabold text-base leading-none shadow-[0_0_16px_rgba(255,102,0,0.3)] group-hover:bg-accent group-hover:text-white transition-colors duration-300"
+              whileHover={{ scale: 1.08, rotate: -4 }}
+              transition={{ type: 'spring', stiffness: 340, damping: 18 }}
+              className="flex items-center justify-center w-8 h-8 rounded-[8px] border-[1.75px] border-[#FF014F] bg-[#FF014F]/10 text-[#FF014F] font-extrabold text-base leading-none shadow-[0_0_18px_rgba(255,1,79,0.35)] group-hover:bg-[#FF014F] group-hover:text-white group-hover:shadow-[0_0_24px_rgba(255,1,79,0.65)] transition-all duration-300"
             >
               S
             </motion.span>
             <span className="text-[19px] font-bold tracking-tight text-white">
               {SITE_DATA.firstName}
-              <span className="font-normal text-accent transition-colors duration-300 group-hover:text-accent-light">
+              <span className="font-normal text-[#FF014F] transition-colors duration-300 group-hover:text-[#FF3B7B]">
                 {SITE_DATA.lastName}
               </span>
             </span>
           </a>
 
-          {/* ── Center: Signature Curved Orange Top Tab (Desktop) ── */}
+          {/* ── Center: Signature Curved Crimson Top Tab (Desktop) ── */}
           <nav
             aria-label="Primary navigation"
             className="hidden lg:flex items-start justify-center absolute left-1/2 -translate-x-1/2 top-0 z-20"
@@ -125,16 +125,16 @@ const Navbar = () => {
                 viewBox="0 0 36 52"
                 fill="none"
                 aria-hidden="true"
-                className="-mr-[1px] shrink-0 drop-shadow-[0_8px_20px_rgba(255,102,0,0.28)]"
+                className="-mr-[1px] shrink-0 drop-shadow-[0_10px_24px_rgba(255,1,79,0.32)]"
               >
-                <path d="M0 0 C16 0 14 52 36 52 L36 0 Z" fill="#FF5500" />
+                <path d="M0 0 C16 0 14 52 36 52 L36 0 Z" fill="#E60047" />
               </svg>
 
-              {/* Center solid gradient bar */}
+              {/* Center gradient bar */}
               <div
-                className="h-[52px] px-5 xl:px-7 flex items-center gap-6 xl:gap-7 shadow-[0_10px_32px_rgba(255,102,0,0.35)]"
+                className="h-[52px] px-5 xl:px-7 flex items-center gap-6 xl:gap-7 shadow-[0_10px_34px_rgba(255,1,79,0.4)]"
                 style={{
-                  background: 'linear-gradient(90deg, #FF5500 0%, #FF6600 50%, #FF7B1A 100%)',
+                  background: 'linear-gradient(90deg, #E60047 0%, #FF014F 50%, #FF2A6D 100%)',
                 }}
               >
                 {NAV_ITEMS.map((item) => {
@@ -153,13 +153,14 @@ const Navbar = () => {
                           type="button"
                           onClick={() => setIsBlogsOpen((prev) => !prev)}
                           aria-expanded={isBlogsOpen}
-                          className={`relative flex items-center gap-1 py-1 text-[13.5px] font-medium tracking-wide transition-colors duration-200 ${
+                          className={`relative flex items-center gap-1 py-1 text-[13.5px] font-medium tracking-wide transition-colors duration-200 cursor-pointer focus-ring rounded ${
                             isActive ? 'text-white font-semibold' : 'text-white/90 hover:text-white'
                           }`}
                         >
                           <span>{item.label}</span>
                           <FiChevronDown
                             size={14}
+                            aria-hidden="true"
                             className={`transition-transform duration-200 ${
                               isBlogsOpen ? 'rotate-180' : ''
                             }`}
@@ -183,7 +184,7 @@ const Navbar = () => {
                               transition={{ duration: 0.18 }}
                               className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-52 z-50"
                             >
-                              <div className="p-1.5 rounded-xl bg-dark-100/95 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/70">
+                              <div className="p-1.5 rounded-xl bg-dark-100/95 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/75">
                                 {item.subLinks.map((sub) =>
                                   sub.external ? (
                                     <a
@@ -192,17 +193,17 @@ const Navbar = () => {
                                       target="_blank"
                                       rel="noopener noreferrer"
                                       onClick={() => setIsBlogsOpen(false)}
-                                      className="flex items-center justify-between px-3.5 py-2.5 text-xs font-medium text-gray-300 rounded-lg hover:bg-accent/15 hover:text-accent transition-colors"
+                                      className="flex items-center justify-between px-3.5 py-2.5 text-xs font-medium text-gray-200 rounded-lg hover:bg-[#FF014F]/15 hover:text-[#FF014F] transition-colors focus-ring"
                                     >
                                       <span>{sub.label}</span>
-                                      <FiExternalLink size={12} />
+                                      <FiExternalLink size={12} aria-hidden="true" />
                                     </a>
                                   ) : (
                                     <a
                                       key={sub.label}
                                       href={sub.href}
                                       onClick={(e) => handleNavClick(e, item.targetId)}
-                                      className="block px-3.5 py-2.5 text-xs font-medium text-gray-300 rounded-lg hover:bg-accent/15 hover:text-accent transition-colors"
+                                      className="block px-3.5 py-2.5 text-xs font-medium text-gray-200 rounded-lg hover:bg-[#FF014F]/15 hover:text-[#FF014F] transition-colors focus-ring"
                                     >
                                       {sub.label}
                                     </a>
@@ -221,17 +222,19 @@ const Navbar = () => {
                       key={item.label}
                       href={`#${item.targetId}`}
                       onClick={(e) => handleNavClick(e, item.targetId)}
-                      className={`relative py-1 text-[13.5px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap ${
+                      className={`group/nav relative py-1 text-[13.5px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap focus-ring rounded ${
                         isActive ? 'text-white font-semibold' : 'text-white/90 hover:text-white'
                       }`}
                     >
                       {item.label}
-                      {isActive && (
+                      {isActive ? (
                         <motion.span
                           layoutId="activeNav"
                           className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-white"
                           transition={{ type: 'spring', stiffness: 420, damping: 30 }}
                         />
+                      ) : (
+                        <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-white/75 rounded-full group-hover/nav:w-full transition-all duration-300" />
                       )}
                     </a>
                   );
@@ -245,35 +248,38 @@ const Navbar = () => {
                 viewBox="0 0 36 52"
                 fill="none"
                 aria-hidden="true"
-                className="-ml-[1px] shrink-0 drop-shadow-[0_8px_20px_rgba(255,102,0,0.28)]"
+                className="-ml-[1px] shrink-0 drop-shadow-[0_10px_24px_rgba(255,1,79,0.32)]"
               >
-                <path d="M36 0 C20 0 22 52 0 52 L0 0 Z" fill="#FF7B1A" />
+                <path d="M36 0 C20 0 22 52 0 52 L0 0 Z" fill="#FF2A6D" />
               </svg>
             </div>
           </nav>
 
-          {/* ── Right: Let's Talk > Button + Mobile Menu Button ── */}
+          {/* ── Right: Let's Talk > Button + Circular Mobile Hamburger (matching Image 2) ── */}
           <div className="flex items-center gap-3 z-10">
             <motion.a
               href="#contact"
               onClick={(e) => handleNavClick(e, 'contact')}
-              whileHover={{ scale: 1.04, boxShadow: '0 8px 28px rgba(255,102,0,0.5)' }}
+              whileHover={{ scale: 1.04, boxShadow: '0 8px 30px rgba(255,1,79,0.55)' }}
               whileTap={{ scale: 0.97 }}
-              className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 text-[13.5px] font-semibold text-white rounded-md shadow-[0_4px_20px_rgba(255,102,0,0.35)] transition-all duration-300 ripple-btn"
+              className="hidden sm:inline-flex items-center gap-1.5 px-5 py-2.5 min-h-[42px] text-[13.5px] font-semibold text-white rounded-md shadow-[0_4px_22px_rgba(255,1,79,0.4)] transition-all duration-300 ripple-btn hover-icon-reverse focus-ring"
               style={{
-                background: 'linear-gradient(135deg, #FF5500 0%, #FF7A1A 100%)',
+                background: 'linear-gradient(135deg, #E60047 0%, #FF014F 55%, #FF2A6D 100%)',
               }}
             >
               <span>Let&apos;s Talk</span>
-              <FiChevronRight size={15} className="stroke-[2.5]" />
+              <span className="icon-slide" aria-hidden="true">
+                <FiChevronRight size={15} className="icon-primary stroke-[2.5]" />
+                <FiChevronRight size={15} className="icon-secondary stroke-[2.5]" />
+              </span>
             </motion.a>
 
-            {/* Mobile / Tablet Hamburger */}
+            {/* Circular crimson mobile hamburger button (matching Image 2 mobile bar) */}
             <button
               type="button"
               onClick={() => setIsMenuOpen((prev) => !prev)}
-              className="relative z-50 flex flex-col items-center justify-center w-10 h-10 lg:hidden gap-1.5 rounded-lg border border-white/10 bg-dark-100/70 backdrop-blur-md"
-              aria-label="Toggle menu"
+              className="relative z-50 flex flex-col items-center justify-center w-11 h-11 lg:hidden gap-1.5 rounded-full bg-[#FF014F] text-white shadow-[0_0_22px_rgba(255,1,79,0.52)] hover:bg-[#D40041] transition-colors duration-200 cursor-pointer focus-ring"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isMenuOpen}
             >
               {[
@@ -284,7 +290,7 @@ const Navbar = () => {
                 <motion.span
                   key={i}
                   animate={anim}
-                  transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+                  transition={{ type: 'spring', stiffness: 320, damping: 22 }}
                   className="block w-5 h-0.5 bg-white rounded-full"
                 />
               ))}
@@ -300,10 +306,10 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden border-t border-b lg:hidden bg-dark-100 border-white/10 shadow-2xl shadow-black/80"
+            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden border-t border-b lg:hidden bg-dark-100 border-white/10 shadow-2xl shadow-black/90"
           >
-            <div className="flex flex-col items-center py-6 px-6 space-y-4">
+            <div className="flex flex-col items-center py-6 px-6 space-y-2">
               {NAV_ITEMS.map((item, i) => (
                 <motion.a
                   key={item.label}
@@ -312,10 +318,10 @@ const Navbar = () => {
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.05 }}
-                  className={`text-base font-medium tracking-wide transition-colors duration-200 ${
+                  className={`w-full text-center py-2.5 min-h-[44px] flex items-center justify-center text-base font-medium tracking-wide rounded-lg transition-colors duration-200 focus-ring ${
                     activeSection === item.targetId
-                      ? 'text-accent font-semibold'
-                      : 'text-gray-300 hover:text-white'
+                      ? 'text-[#FF014F] font-semibold bg-[#FF014F]/10'
+                      : 'text-gray-200 hover:text-white hover:bg-white/[0.04]'
                   }`}
                 >
                   {item.label}
@@ -324,16 +330,19 @@ const Navbar = () => {
               <motion.a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, 'contact')}
-                initial={{ opacity: 0, scale: 0.92 }}
+                initial={{ opacity: 0, scale: 0.94 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.25 }}
-                className="inline-flex items-center gap-1.5 px-7 py-2.5 mt-2 text-sm font-semibold text-white rounded-md shadow-lg shadow-accent/30"
+                className="inline-flex items-center justify-center gap-1.5 px-8 py-3 min-h-[44px] mt-3 text-sm font-semibold text-white rounded-full shadow-lg shadow-accent/35 hover-icon-reverse focus-ring"
                 style={{
-                  background: 'linear-gradient(135deg, #FF5500 0%, #FF7A1A 100%)',
+                  background: 'linear-gradient(135deg, #E60047 0%, #FF014F 55%, #FF2A6D 100%)',
                 }}
               >
                 <span>Let&apos;s Talk</span>
-                <FiChevronRight size={15} />
+                <span className="icon-slide" aria-hidden="true">
+                  <FiChevronRight size={15} className="icon-primary" />
+                  <FiChevronRight size={15} className="icon-secondary" />
+                </span>
               </motion.a>
             </div>
           </motion.div>

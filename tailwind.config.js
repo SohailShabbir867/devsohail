@@ -8,19 +8,20 @@ export default {
     extend: {
       colors: {
         dark: {
-          DEFAULT: '#08080a',
-          100: '#111114',
-          200: '#1a1a1f',
-          300: '#242429',
+          DEFAULT: '#060608',
+          100: '#101014',
+          200: '#17171d',
+          300: '#22222a',
         },
         accent: {
-          DEFAULT: '#FF6600',
-          dark:    '#E65100',
-          light:   '#FF8533',
+          DEFAULT: 'rgb(var(--color-accent-rgb) / <alpha-value>)',
+          dark:    'rgb(var(--color-accent-dark-rgb) / <alpha-value>)',
+          light:   'rgb(var(--color-accent-light-rgb) / <alpha-value>)',
         },
       },
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+        display: ['Rajdhani', 'Plus Jakarta Sans', 'sans-serif'],
       },
       animation: {
         'pulse-slow':   'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
