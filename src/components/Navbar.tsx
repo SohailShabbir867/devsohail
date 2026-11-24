@@ -7,7 +7,6 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen]         = useState(false);
   const [isBlogsOpen, setIsBlogsOpen]       = useState(false);
   const [scrolled, setScrolled]             = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [activeSection, setActiveSection]   = useState('home');
   const dropdownRef                         = useRef<HTMLDivElement>(null);
 
@@ -15,10 +14,7 @@ const Navbar = () => {
     const sectionIds = NAV_ITEMS.map((item) => item.targetId);
 
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const docH    = document.documentElement.scrollHeight - window.innerHeight;
-      setScrolled(scrollY > 30);
-      setScrollProgress(docH > 0 ? (scrollY / docH) * 100 : 0);
+      setScrolled(window.scrollY > 30);
 
       let current = 'home';
       for (const id of sectionIds) {
@@ -80,14 +76,6 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      {/* Subtle scroll progress bar */}
-      {scrollProgress > 1 && (
-        <div
-          className="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-[#FF014F] via-[#FF3B7B] to-[#FF014F] transition-all duration-150"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      )}
-
       <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-[72px]">
 
