@@ -69,7 +69,7 @@ export const ROLES = [
 ];
 
 export const ABOUT_INTRO =
-  'A passionate Full Stack MERN Developer specializing in building scalable web applications with MongoDB, Express.js, React.js, and Node.js, integrating AI into modern web applications alongside high-performance TypeScript Model Context Protocol (MCP) servers.';
+  'Building scalable MERN web apps, AI integrations, and TypeScript MCP servers.';
 
 export const ABOUT_HIGHLIGHTS: AboutHighlight[] = [
   {
