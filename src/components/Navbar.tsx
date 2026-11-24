@@ -79,19 +79,19 @@ const Navbar = () => {
       <div className="relative px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-[72px]">
 
-          {/* ── Left: [S] SohailShabbir Logo ── */}
+          {/* ── Left: Logo + SohailShabbir ── */}
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, 'home')}
             className="relative z-10 flex items-center gap-2.5 group focus-ring rounded-lg"
           >
-            <motion.span
-              whileHover={{ scale: 1.08, rotate: -4 }}
+            <motion.img
+              src="/assets/logo.png"
+              alt="Dev Sohail Logo"
+              whileHover={{ scale: 1.1, rotate: -4 }}
               transition={{ type: 'spring', stiffness: 340, damping: 18 }}
-              className="flex items-center justify-center w-8 h-8 rounded-[8px] border-[1.75px] border-[#FF014F] bg-[#FF014F]/10 text-[#FF014F] font-extrabold text-base leading-none shadow-[0_0_18px_rgba(255,1,79,0.35)] group-hover:bg-[#FF014F] group-hover:text-white group-hover:shadow-[0_0_24px_rgba(255,1,79,0.65)] transition-all duration-300"
-            >
-              S
-            </motion.span>
+              className="w-9 h-9 md:w-10 md:h-10 object-contain drop-shadow-[0_0_14px_rgba(255,1,79,0.45)] group-hover:drop-shadow-[0_0_22px_rgba(255,1,79,0.75)] transition-all duration-300"
+            />
             <span className="text-[19px] font-bold tracking-tight text-white">
               {SITE_DATA.firstName}
               <span className="font-normal text-[#FF014F] transition-colors duration-300 group-hover:text-[#FF3B7B]">

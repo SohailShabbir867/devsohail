@@ -1,11 +1,21 @@
-import { MotionConfig } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence, MotionConfig } from 'framer-motion';
+import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
     <MotionConfig reducedMotion="user">
       <div className="bg-dark min-h-screen">
+        <AnimatePresence mode="wait">
+          {isLoading && (
+            <LoadingScreen key="loader" onComplete={() => setIsLoading(false)} />
+          )}
+        </AnimatePresence>
+
         <Navbar />
         <main>
           <Hero />
