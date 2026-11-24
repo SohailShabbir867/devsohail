@@ -21,6 +21,15 @@ export interface InfoItem {
   href?: string;
 }
 
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  date: string;
+  summary: string;
+  highlights: string[];
+  featured?: boolean;
+}
+
 export const SOCIAL_LINKS = {
   github:    'https://github.com/SohailShabbir867',
   linkedin:  'https://www.linkedin.com/in/sohail-shabbir-546a12375/',
@@ -88,6 +97,47 @@ export const ABOUT_INFO_ITEMS: InfoItem[] = [
   { label: 'Phone',   value: '+92 329 1729925',            href: 'tel:+923291729925' },
   { label: 'Country', value: 'Pakistan' },
   { label: 'City',    value: 'Rahim Yar Khan' },
+];
+
+export const EDUCATION_INTRO =
+  'My formal academic foundation in Software Engineering and Computer Science — building core expertise in full-stack development, problem solving, and system architecture.';
+
+export const EDUCATION_DATA: EducationItem[] = [
+  {
+    degree: 'BS in Software Engineering',
+    institution: 'The Islamia University of Bahawalpur',
+    date: '2025 – Present',
+    summary:
+      'Specializing in Full Stack MERN Development (MongoDB, Express.js, React.js, Node.js), REST APIs, and database management while actively participating in coding competitions, hackathons, and developer workshops.',
+    highlights: [
+      'Specializing in Full Stack MERN Development — MongoDB, Express.js, React.js, Node.js.',
+      'Building real-world projects using the MERN stack with REST APIs and database management.',
+      'Actively participating in coding competitions, hackathons, and developer workshops.',
+    ],
+    featured: true,
+  },
+  {
+    degree: 'Intermediate in ICS',
+    institution: 'Punjab College of Science Zahir Peer',
+    date: '2023 – 2025',
+    summary:
+      'Studied Mathematics, Physics, and Computer Science for engineering preparation, achieving strong academic results and actively engaging in science clubs.',
+    highlights: [
+      'Studied Mathematics and Physics for engineering preparation.',
+      'Achieved high grades and actively engaged in science clubs.',
+    ],
+  },
+  {
+    degree: 'Matriculation in Science',
+    institution: 'Government High School Jajjah Abbasina',
+    date: '2019 – 2021',
+    summary:
+      'Focused on Computer Science and general sciences, participating in technology fairs and inter-school academic competitions.',
+    highlights: [
+      'Focused on Computer Science and general sciences.',
+      'Participated in technology fairs and inter-school competitions.',
+    ],
+  },
 ];
 
 export const NAV_ITEMS: NavItem[] = [

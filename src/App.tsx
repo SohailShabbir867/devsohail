@@ -4,6 +4,7 @@ import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import Education from './components/Education';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,6 +22,7 @@ function App() {
         <main>
           <Hero />
           <About />
+          <Education />
           {/* Future sections will be added here */}
           <section id="portfolio" className="min-h-screen flex items-center justify-center"><p className="text-gray-600">Portfolio – coming soon</p></section>
           <section id="contact"   className="min-h-screen flex items-center justify-center"><p className="text-gray-600">Contact – coming soon</p></section>
