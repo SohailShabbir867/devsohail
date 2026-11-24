@@ -335,7 +335,7 @@ const Hero = () => {
                 className="absolute inset-x-0 top-[35%] -translate-y-1/2 z-0 flex items-center justify-center gap-24 sm:gap-32 lg:gap-40 pointer-events-none select-none"
               >
                 <span className="font-display font-bold uppercase tracking-[0.06em] text-[30px] sm:text-[42px] lg:text-[50px] text-white/90 group-hover:text-white group-hover:-translate-x-1 transition-all duration-500 whitespace-nowrap drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]">
-                  MERN
+                  FULL
                 </span>
                 <span className="font-display font-bold uppercase tracking-[0.06em] text-[30px] sm:text-[42px] lg:text-[50px] text-white/90 group-hover:text-white group-hover:translate-x-1 transition-all duration-500 whitespace-nowrap drop-shadow-[0_4px_24px_rgba(0,0,0,0.7)]">
                   STACK
@@ -366,8 +366,8 @@ const Hero = () => {
                 aria-hidden="true"
                 className="absolute inset-x-0 bottom-3 sm:bottom-5 z-20 flex justify-center pointer-events-none select-none"
               >
-                <span className="font-display font-bold uppercase tracking-[0.04em] text-[29px] sm:text-[40px] lg:text-[48px] text-outline-hero group-hover:text-outline-accent group-hover:translate-y-0.5 transition-all duration-500 whitespace-nowrap">
-                  MERN DEVELOPER
+                <span className="font-display font-bold uppercase tracking-[0.04em] text-[24px] sm:text-[33px] lg:text-[40px] text-outline-hero group-hover:text-outline-accent group-hover:translate-y-0.5 transition-all duration-500 whitespace-nowrap">
+                  FULL STACK DEVELOPER
                 </span>
               </div>
             </div>

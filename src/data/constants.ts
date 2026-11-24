@@ -9,7 +9,7 @@ export interface NavItem {
 }
 
 export interface AboutHighlight {
-  number: string;
+  id: string;
   title: string;
   description?: string;
   isInfoList?: boolean;
@@ -62,19 +62,19 @@ export const ABOUT_INTRO =
 
 export const ABOUT_HIGHLIGHTS: AboutHighlight[] = [
   {
-    number: '01.',
+    id: 'who-am-i',
     title: 'Who Am I?',
     description:
       'I am Sohail Shabbir, a Full Stack MERN Developer based in Rahim Yar Khan, Pakistan, focused on building fast, scalable, and user-centric web products with MongoDB, Express.js, React.js, and Node.js.',
   },
   {
-    number: '02.',
+    id: 'ai-mcp',
     title: 'AI & TypeScript MCP Architecture',
     description:
       'I integrate practical AI workflows into modern web platforms and engineer high-performance TypeScript Model Context Protocol (MCP) servers alongside clean REST APIs and real-time backends.',
   },
   {
-    number: '03.',
+    id: 'personal-details',
     title: 'Personal Details',
     isInfoList: true,
   },
