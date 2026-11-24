@@ -31,9 +31,11 @@ export const SOCIAL_LINKS = {
 };
 
 export const SITE_DATA = {
-  firstName: 'Sohail',
-  lastName:  'Shabbir',
-  name:      'Sohail Shabbir',
+  brandFirst:  'Dev',
+  brandSecond: 'Sohail',
+  firstName:   'Sohail',
+  lastName:    'Shabbir',
+  name:        'Sohail Shabbir',
   email:     'sohailshabbir2005@gmail.com',
   phone:     '+92 329 1729925',
   location:  'Rahim Yar Khan, Pakistan',
