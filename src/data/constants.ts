@@ -8,6 +8,19 @@ export interface NavItem {
   subLinks?: { label: string; href: string; external?: boolean }[];
 }
 
+export interface AboutHighlight {
+  number: string;
+  title: string;
+  description?: string;
+  isInfoList?: boolean;
+}
+
+export interface InfoItem {
+  label: string;
+  value: string;
+  href?: string;
+}
+
 export const SOCIAL_LINKS = {
   github:    'https://github.com/SohailShabbir867',
   linkedin:  'https://www.linkedin.com/in/sohail-shabbir-546a12375/',
@@ -42,6 +55,37 @@ export const ROLES = [
   'AI & Web Integration Developer',
   'MongoDB & Express Architect',
   'UI/UX & Frontend Engineer',
+];
+
+export const ABOUT_INTRO =
+  'A passionate Full Stack MERN Developer specializing in building scalable web applications with MongoDB, Express.js, React.js, and Node.js, integrating AI into modern web applications alongside high-performance TypeScript Model Context Protocol (MCP) servers.';
+
+export const ABOUT_HIGHLIGHTS: AboutHighlight[] = [
+  {
+    number: '01.',
+    title: 'Who Am I?',
+    description:
+      'I am Sohail Shabbir, a Full Stack MERN Developer based in Rahim Yar Khan, Pakistan, focused on building fast, scalable, and user-centric web products with MongoDB, Express.js, React.js, and Node.js.',
+  },
+  {
+    number: '02.',
+    title: 'AI & TypeScript MCP Architecture',
+    description:
+      'I integrate practical AI workflows into modern web platforms and engineer high-performance TypeScript Model Context Protocol (MCP) servers alongside clean REST APIs and real-time backends.',
+  },
+  {
+    number: '03.',
+    title: 'Personal Details',
+    isInfoList: true,
+  },
+];
+
+export const ABOUT_INFO_ITEMS: InfoItem[] = [
+  { label: 'Name',    value: 'Sohail Shabbir' },
+  { label: 'Email',   value: 'sohailshabbir2005@gmail.com', href: 'mailto:sohailshabbir2005@gmail.com' },
+  { label: 'Phone',   value: '+92 329 1729925',            href: 'tel:+923291729925' },
+  { label: 'Country', value: 'Pakistan' },
+  { label: 'City',    value: 'Rahim Yar Khan' },
 ];
 
 export const NAV_ITEMS: NavItem[] = [
