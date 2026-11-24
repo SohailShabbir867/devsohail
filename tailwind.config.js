@@ -8,19 +8,19 @@ export default {
     extend: {
       colors: {
         dark: {
-          DEFAULT: '#0a0a0a',
-          100: '#111111',
-          200: '#1a1a1a',
-          300: '#222222',
+          DEFAULT: '#08080a',
+          100: '#111114',
+          200: '#1a1a1f',
+          300: '#242429',
         },
         accent: {
-          DEFAULT: '#c0392b',
-          dark:    '#a93226',
-          light:   '#e74c3c',
+          DEFAULT: '#FF6600',
+          dark:    '#E65100',
+          light:   '#FF8533',
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
       },
       animation: {
         'pulse-slow':   'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
