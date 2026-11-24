@@ -35,7 +35,7 @@ const Education = () => {
             <br />
             Core <span className="text-[#FF014F]">Education</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-[#878787]">
+          <p className="mt-4 text-sm sm:text-[15px] leading-relaxed text-[#A1A1AA]">
             {EDUCATION_INTRO}
           </p>
         </motion.div>
@@ -58,8 +58,8 @@ const Education = () => {
           </div>
         </motion.div>
 
-        {/* ── Responsive 2-Column Education Cards Grid ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* ── Responsive Education Cards Grid ── */}
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {EDUCATION_DATA.map((edu, index) => (
             <motion.article
               key={edu.degree}
@@ -71,9 +71,7 @@ const Education = () => {
                 delay: index * 0.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className={`group relative rounded-2xl bg-[#111115] border border-white/[0.06] p-7 sm:p-8 hover:border-[#FF014F]/45 hover:-translate-y-1 hover:shadow-[0_14px_38px_rgba(255,1,79,0.12)] transition-all duration-300 overflow-hidden ${
-                edu.featured ? 'md:col-span-2' : ''
-              }`}
+              className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#111115] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#FF014F]/45 hover:shadow-[0_14px_38px_rgba(255,1,79,0.12)] sm:p-7"
             >
               {/* Subtle top-right crimson hover sheen */}
               <div
@@ -82,24 +80,31 @@ const Education = () => {
               />
 
               <div className="relative z-10">
-                {/* Degree & Institution row */}
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <p className="text-sm sm:text-[15px] font-medium text-[#CFD0D4]">
-                    {edu.degree}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#FF3B7B]">
-                    <FiAward size={13} aria-hidden="true" />
-                    {edu.institution}
+                <div className="flex items-start justify-between gap-4">
+                  <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-[#FF014F]/20 bg-[#FF014F]/10 text-[#FF014F]">
+                    <FiAward size={18} aria-hidden="true" />
                   </span>
+                  {edu.featured && (
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-medium text-white/80">
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#FF014F]" aria-hidden="true" />
+                      In progress
+                    </span>
+                  )}
                 </div>
 
-                {/* Prominent Year Range (matching reference card typography) */}
-                <h4 className="mt-1.5 text-xl sm:text-2xl font-extrabold text-white tracking-tight group-hover:text-[#FF014F] transition-colors duration-300">
+                <p className="mt-6 text-sm font-semibold tracking-wide text-white/75">
                   {edu.date}
+                </p>
+
+                <h4 className="mt-2 text-xl font-bold leading-snug tracking-tight text-white transition-colors duration-300 group-hover:text-[#FF3B7B] sm:text-[22px]">
+                  {edu.degree}
                 </h4>
 
-                {/* Academic summary */}
-                <p className="mt-3 text-sm leading-relaxed text-[#878787] group-hover:text-[#CFD0D4]/90 transition-colors duration-300">
+                <p className="mt-3 text-sm font-medium leading-relaxed text-[#D4D4D8]">
+                  {edu.institution}
+                </p>
+
+                <p className="mt-4 text-sm leading-relaxed text-[#A1A1AA]">
                   {edu.summary}
                 </p>
               </div>
