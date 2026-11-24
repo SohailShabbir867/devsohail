@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark text-white font-sans antialiased;
+    background-color: #0a0a0a;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-200;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent-light;
+  }
+}
+
+@layer components {
+  /* Red glow button ripple effect */
+  .ripple-btn {
+    @apply relative overflow-hidden;
+  }
+  .ripple-btn::after {
+    content: '';
+    @apply absolute inset-0 opacity-0 bg-white/10 rounded-[inherit] transition-opacity duration-300;
+  }
+  .ripple-btn:active::after {
+    @apply opacity-100;
+  }
+
+  /* Gradient text for typewriter */
+  .gradient-text {
+    background: linear-gradient(135deg, #e74c3c 0%, #ff6b6b 50%, #c0392b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Text shimmer on logo hover */
+  .text-shimmer {
+    background: linear-gradient(90deg, #c0392b, #ff6b6b, #c0392b);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 2s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: 200% center; }
+    100% { background-position: -200% center; }
+  }
+}
+
+/* Particle + orb float animations */
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(20px, -15px) scale(1.04); }
+  66%       { transform: translate(-10px, 20px) scale(0.97); }
+}
+.orb-float {
+  animation: orbFloat linear infinite;
+}
+
+/* Scroll indicator dot */
+@keyframes scrollDotAnim {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50%       { transform: translateY(10px); opacity: 0.3; }
+}
+.animate-scroll-dot {
+  animation: scrollDotAnim 2s ease-in-out infinite;
+}
