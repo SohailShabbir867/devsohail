@@ -120,7 +120,7 @@ const Navbar = () => {
 
               {/* Center gradient bar */}
               <div
-                className="h-[52px] px-5 xl:px-7 flex items-center gap-6 xl:gap-7 shadow-[0_10px_34px_rgba(255,1,79,0.4)]"
+                className="h-[52px] px-3.5 xl:px-6 flex items-center gap-4 xl:gap-5 shadow-[0_10px_34px_rgba(255,1,79,0.4)]"
                 style={{
                   background: 'linear-gradient(90deg, #E60047 0%, #FF014F 50%, #FF2A6D 100%)',
                 }}
@@ -141,7 +141,7 @@ const Navbar = () => {
                           type="button"
                           onClick={() => setIsBlogsOpen((prev) => !prev)}
                           aria-expanded={isBlogsOpen}
-                          className={`relative flex items-center gap-1 py-1 text-[13.5px] font-medium tracking-wide transition-colors duration-200 cursor-pointer focus-ring rounded ${
+                          className={`relative flex items-center gap-1 py-1 text-[13px] xl:text-[13.5px] font-medium tracking-wide transition-colors duration-200 cursor-pointer focus-ring rounded ${
                             isActive ? 'text-white font-semibold' : 'text-white/90 hover:text-white'
                           }`}
                         >
@@ -210,7 +210,7 @@ const Navbar = () => {
                       key={item.label}
                       href={`#${item.targetId}`}
                       onClick={(e) => handleNavClick(e, item.targetId)}
-                      className={`group/nav relative py-1 text-[13.5px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap focus-ring rounded ${
+                      className={`group/nav relative py-1 text-[13px] xl:text-[13.5px] font-medium tracking-wide transition-colors duration-200 whitespace-nowrap focus-ring rounded ${
                         isActive ? 'text-white font-semibold' : 'text-white/90 hover:text-white'
                       }`}
                     >

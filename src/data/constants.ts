@@ -30,6 +30,18 @@ export interface EducationItem {
   featured?: boolean;
 }
 
+export interface ExperienceItem {
+  id: string;
+  role: string;
+  company: string;
+  focusTag: string;
+  projectHighlight: string;
+  summary: string;
+  responsibilities: string[];
+  technologies: string[];
+  featured?: boolean;
+}
+
 export const SOCIAL_LINKS = {
   github:    'https://github.com/SohailShabbir867',
   linkedin:  'https://www.linkedin.com/in/sohail-shabbir-546a12375/',
@@ -141,12 +153,76 @@ export const EDUCATION_DATA: EducationItem[] = [
   },
 ];
 
+export const EXPERIENCE_INTRO =
+  'Selected work across full-stack engineering and frontend product development.';
+
+export const EXPERIENCE_DATA: ExperienceItem[] = [
+  {
+    id: 'blizon-technologies',
+    role: 'Software Engineer',
+    company: 'Blizon Technologies',
+    focusTag: 'Full-Stack & AI',
+    projectHighlight: 'C17 Speed-to-Lead',
+    featured: true,
+    summary:
+      'Contributing to full-stack web applications, business automation systems, and AI-powered solutions with scalable backend integrations and efficient workflows.',
+    responsibilities: [
+      'Developed full-stack web application features using React.js, Next.js, TypeScript, and Node.js.',
+      'Built and integrated REST APIs using Express.js and connected applications with MongoDB and Supabase.',
+      'Contributed to the development of C17, a Speed-to-Lead platform featuring lead management, inbox, dashboards, and workflow automation.',
+      'Worked on dashboard development, role-based access control (RBAC), and database integrations.',
+      'Explored AI-powered automation and integrations to streamline business workflows.',
+      'Collaborated with team members to implement features, troubleshoot issues, and improve application functionality.',
+    ],
+    technologies: [
+      'React.js',
+      'Next.js',
+      'TypeScript',
+      'JavaScript',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Supabase',
+      'PostgreSQL',
+      'Git',
+      'REST APIs',
+    ],
+  },
+  {
+    id: 'revona-technologies',
+    role: 'Frontend Developer',
+    company: 'Revona Technologies',
+    focusTag: 'Frontend & UI',
+    projectHighlight: 'E-Mechanics Platform',
+    summary:
+      'Building responsive, user-friendly React web applications with reusable UI components, REST API integrations, and performance-focused interfaces.',
+    responsibilities: [
+      'Developed responsive and interactive user interfaces using React.js, JavaScript, and Tailwind CSS.',
+      'Built reusable frontend components and maintained clean, structured code.',
+      'Integrated RESTful APIs to connect frontend applications with backend services.',
+      'Worked on the E-Mechanics platform, contributing to frontend functionality and UI improvements.',
+      'Collaborated with the development team to fix bugs, improve usability, and deliver features.',
+    ],
+    technologies: [
+      'React.js',
+      'JavaScript',
+      'Tailwind CSS',
+      'HTML5',
+      'CSS3',
+      'REST APIs',
+      'Git',
+      'GitHub',
+    ],
+  },
+];
+
 export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home',      targetId: 'home' },
-  { label: 'About Me',  targetId: 'about' },
-  { label: 'Skills',    targetId: 'skills' },
-  { label: 'Portfolio', targetId: 'portfolio' },
-  { label: 'Contact',   targetId: 'contact' },
+  { label: 'Home',       targetId: 'home' },
+  { label: 'About Me',   targetId: 'about' },
+  { label: 'Skills',     targetId: 'skills' },
+  { label: 'Experience', targetId: 'experience' },
+  { label: 'Portfolio',  targetId: 'portfolio' },
+  { label: 'Contact',    targetId: 'contact' },
   {
     label: 'Blogs',
     targetId: 'blogs',

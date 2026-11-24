@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Education from './components/Education';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +25,8 @@ function App() {
           <Hero />
           <About />
           <Education />
+          <Skills />
+          <Experience />
           {/* Future sections will be added here */}
           <section id="portfolio" className="min-h-screen flex items-center justify-center"><p className="text-gray-600">Portfolio – coming soon</p></section>
           <section id="contact"   className="min-h-screen flex items-center justify-center"><p className="text-gray-600">Contact – coming soon</p></section>
