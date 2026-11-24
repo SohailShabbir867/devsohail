@@ -87,7 +87,7 @@ const Education = () => {
                   <p className="text-sm sm:text-[15px] font-medium text-[#CFD0D4]">
                     {edu.degree}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#FF014F]">
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-[#FF3B7B]">
                     <FiAward size={13} aria-hidden="true" />
                     {edu.institution}
                   </span>
@@ -102,24 +102,6 @@ const Education = () => {
                 <p className="mt-3 text-sm leading-relaxed text-[#878787] group-hover:text-[#CFD0D4]/90 transition-colors duration-300">
                   {edu.summary}
                 </p>
-
-                {/* Key highlights on featured current degree */}
-                {edu.featured && (
-                  <ul className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-4 border-t border-white/[0.06]">
-                    {edu.highlights.map((item) => (
-                      <li
-                        key={item}
-                        className="flex items-start gap-2 text-xs sm:text-[13px] leading-relaxed text-[#CFD0D4]/80"
-                      >
-                        <span
-                          aria-hidden="true"
-                          className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#FF014F] shrink-0"
-                        />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </div>
             </motion.article>
           ))}
