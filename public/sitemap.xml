@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xsi:schemaLocation="
+    http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ══════════════════════════════════════════════════════
+       devsohail.tech — Sohail Shabbir Portfolio Sitemap
+       Keywords: Sohail Shabbir, Dev Sohail, Sohail IUB,
+                 Software Engineer Pakistan, MERN Developer Pakistan
+  ══════════════════════════════════════════════════════ -->
+
+  <!-- Home / Hero -->
+  <url>
+    <loc>https://devsohail.tech/</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/hero%20section%20image.png</image:loc>
+      <image:title>Sohail Shabbir – Full Stack MERN Developer from Pakistan</image:title>
+      <image:caption>Sohail Shabbir (Dev Sohail), Full Stack MERN Developer and Software Engineer from Rahim Yar Khan, Pakistan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/logo.png</image:loc>
+      <image:title>Dev Sohail – Logo</image:title>
+      <image:caption>Official logo of devsohail.tech – Sohail Shabbir's portfolio</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/og-cover.png</image:loc>
+      <image:title>Sohail Shabbir Portfolio Cover</image:title>
+      <image:caption>OG cover image for devsohail.tech – Sohail Shabbir, Full Stack Developer Pakistan</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://devsohail.tech/#about</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/about%20section%20image.png</image:loc>
+      <image:title>About Sohail Shabbir – Dev Sohail</image:title>
+      <image:caption>About Sohail Shabbir, Full Stack MERN Developer and Software Engineer from Pakistan</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Skills Section -->
+  <url>
+    <loc>https://devsohail.tech/#skills</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Experience Section -->
+  <url>
+    <loc>https://devsohail.tech/#experience</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Education Section -->
+  <url>
+    <loc>https://devsohail.tech/#education</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Portfolio Section -->
+  <url>
+    <loc>https://devsohail.tech/#portfolio</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/projects/blizon-portal.png</image:loc>
+      <image:title>Blizon Portal – Project by Sohail Shabbir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/projects/dailyblogs.png</image:loc>
+      <image:title>DailyBlogs – Project by Dev Sohail</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/projects/ecommerce.webp</image:loc>
+      <image:title>E-commerce App – MERN Project by Sohail Shabbir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/projects/foodgarden.webp</image:loc>
+      <image:title>Food Garden App – React Project by Sohail Shabbir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/projects/jobs-board.webp</image:loc>
+      <image:title>Jobs Board – MERN App by Dev Sohail</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/projects/researchflow.jpg</image:loc>
+      <image:title>ResearchFlow – Project by Sohail Shabbir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://devsohail.tech/assets/projects/roombridge.png</image:loc>
+      <image:title>RoomBridge – Full Stack App by Sohail Shabbir</image:title>
+    </image:image>
+  </url>
+
+  <!-- Contact Section -->
+  <url>
+    <loc>https://devsohail.tech/#contact</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+</urlset>

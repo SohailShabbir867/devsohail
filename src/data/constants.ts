@@ -4,8 +4,6 @@
 export interface NavItem {
   label: string;
   targetId: string;
-  hasDropdown?: boolean;
-  subLinks?: { label: string; href: string; external?: boolean }[];
 }
 
 export interface AboutHighlight {
@@ -221,15 +219,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'About Me',   targetId: 'about' },
   { label: 'Skills',     targetId: 'skills' },
   { label: 'Experience', targetId: 'experience' },
+  { label: 'Hobbies',    targetId: 'hobbies' },
   { label: 'Portfolio',  targetId: 'portfolio' },
   { label: 'Contact',    targetId: 'contact' },
-  {
-    label: 'Blogs',
-    targetId: 'blogs',
-    hasDropdown: true,
-    subLinks: [
-      { label: 'All Tech Articles', href: '#blogs' },
-      { label: 'DailyBlogs Platform', href: 'https://dailyblogs.website/', external: true },
-    ],
-  },
 ];

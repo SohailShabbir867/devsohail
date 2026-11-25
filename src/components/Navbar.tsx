@@ -1,14 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiChevronDown, FiChevronRight, FiExternalLink } from 'react-icons/fi';
+import { FiChevronRight } from 'react-icons/fi';
 import { NAV_ITEMS, SITE_DATA } from '../data/constants';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen]         = useState(false);
-  const [isBlogsOpen, setIsBlogsOpen]       = useState(false);
   const [scrolled, setScrolled]             = useState(false);
   const [activeSection, setActiveSection]   = useState('home');
-  const dropdownRef                         = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const sectionIds = NAV_ITEMS.map((item) => item.targetId);
@@ -31,24 +29,12 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  /* Close Blogs dropdown on outside click */
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setIsBlogsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
     targetId: string,
   ) => {
     e.preventDefault();
     setIsMenuOpen(false);
-    setIsBlogsOpen(false);
 
     const scrollToTarget = () => {
       const element = document.getElementById(targetId);
@@ -127,83 +113,6 @@ const Navbar = () => {
               >
                 {NAV_ITEMS.map((item) => {
                   const isActive = activeSection === item.targetId;
-
-                  if (item.hasDropdown && item.subLinks) {
-                    return (
-                      <div
-                        key={item.label}
-                        ref={dropdownRef}
-                        className="relative"
-                        onMouseEnter={() => setIsBlogsOpen(true)}
-                        onMouseLeave={() => setIsBlogsOpen(false)}
-                      >
-                        <button
-                          type="button"
-                          onClick={() => setIsBlogsOpen((prev) => !prev)}
-                          aria-expanded={isBlogsOpen}
-                          className={`relative flex items-center gap-1 py-1 text-[13px] xl:text-[13.5px] font-medium tracking-wide transition-colors duration-200 cursor-pointer focus-ring rounded ${
-                            isActive ? 'text-white font-semibold' : 'text-white/90 hover:text-white'
-                          }`}
-                        >
-                          <span>{item.label}</span>
-                          <FiChevronDown
-                            size={14}
-                            aria-hidden="true"
-                            className={`transition-transform duration-200 ${
-                              isBlogsOpen ? 'rotate-180' : ''
-                            }`}
-                          />
-                          {isActive && (
-                            <motion.span
-                              layoutId="activeNav"
-                              className="absolute -bottom-1 left-0 right-0 h-[2px] rounded-full bg-white"
-                              transition={{ type: 'spring', stiffness: 420, damping: 30 }}
-                            />
-                          )}
-                        </button>
-
-                        {/* Blogs Dropdown */}
-                        <AnimatePresence>
-                          {isBlogsOpen && (
-                            <motion.div
-                              initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                              animate={{ opacity: 1, y: 0, scale: 1 }}
-                              exit={{ opacity: 0, y: 6, scale: 0.96 }}
-                              transition={{ duration: 0.18 }}
-                              className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-52 z-50"
-                            >
-                              <div className="p-1.5 rounded-xl bg-dark-100/95 backdrop-blur-xl border border-white/10 shadow-2xl shadow-black/75">
-                                {item.subLinks.map((sub) =>
-                                  sub.external ? (
-                                    <a
-                                      key={sub.label}
-                                      href={sub.href}
-                                      target="_blank"
-                                      rel="noopener noreferrer"
-                                      onClick={() => setIsBlogsOpen(false)}
-                                      className="flex items-center justify-between px-3.5 py-2.5 text-xs font-medium text-gray-200 rounded-lg hover:bg-[#FF014F]/15 hover:text-[#FF014F] transition-colors focus-ring"
-                                    >
-                                      <span>{sub.label}</span>
-                                      <FiExternalLink size={12} aria-hidden="true" />
-                                    </a>
-                                  ) : (
-                                    <a
-                                      key={sub.label}
-                                      href={sub.href}
-                                      onClick={(e) => handleNavClick(e, item.targetId)}
-                                      className="block px-3.5 py-2.5 text-xs font-medium text-gray-200 rounded-lg hover:bg-[#FF014F]/15 hover:text-[#FF014F] transition-colors focus-ring"
-                                    >
-                                      {sub.label}
-                                    </a>
-                                  ),
-                                )}
-                              </div>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-                    );
-                  }
 
                   return (
                     <a

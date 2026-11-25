@@ -152,6 +152,235 @@
       transform: rotateY(180deg);
     }
   }
+
+  .experience-card {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    perspective: 1400px;
+  }
+  .experience-card__inner {
+    position: relative;
+    display: grid;
+    min-height: 17rem;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .experience-card__face {
+    position: relative;
+    grid-area: 1 / 1;
+    display: flex;
+    overflow: hidden;
+    border-radius: 1rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .experience-card__face--front {
+    align-items: stretch;
+    padding: 1.25rem 1rem;
+    border: 1px solid rgba(255, 1, 79, 0.2);
+    background:
+      radial-gradient(circle at top left, rgba(255, 1, 79, 0.1), transparent 42%),
+      linear-gradient(135deg, #101014, #0b0b10);
+    box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.95);
+    transition: border-color 300ms ease, box-shadow 300ms ease, transform 300ms ease;
+  }
+  .experience-card:hover .experience-card__face--front {
+    border-color: rgba(255, 1, 79, 0.58);
+    box-shadow: 0 14px 38px rgba(255, 1, 79, 0.12);
+    transform: translateY(-2px);
+  }
+  .experience-card__brand {
+    display: flex;
+    flex: 0 0 5.25rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+  .experience-card__monogram {
+    display: flex;
+    width: 4.25rem;
+    height: 4.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 1, 79, 0.2);
+    border-radius: 1rem;
+    background: #f5f5f7;
+    color: #D60044;
+    font-size: 2rem;
+    font-weight: 800;
+    box-shadow: 0 0 28px rgba(255, 1, 79, 0.12);
+  }
+  .experience-card__divider {
+    width: 1px;
+    min-height: 7rem;
+    flex: 1;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255, 1, 79, 0.38),
+      transparent
+    );
+  }
+  .experience-card__content {
+    min-width: 0;
+    flex: 1;
+    align-self: center;
+    padding: 0.25rem 2.8rem 0.25rem 0;
+  }
+  .experience-card__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid rgba(255, 1, 79, 0.35);
+    border-radius: 9999px;
+    background: rgba(255, 1, 79, 0.08);
+    padding: 0.35rem 0.65rem;
+    color: #FF3B7B;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+  .experience-card__tag {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(255, 1, 79, 0.22);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.035);
+    padding: 0.25rem 0.55rem;
+    color: #D4D4D8;
+    font-size: 0.625rem;
+    line-height: 1.2;
+  }
+  .experience-card__action {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 1, 79, 0.7);
+    border-radius: 9999px;
+    background: #0A0A0E;
+    color: #FF3B7B;
+    transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease;
+  }
+  .experience-card__action:hover {
+    background: #FF014F;
+    color: #ffffff;
+    box-shadow: 0 0 18px rgba(255, 1, 79, 0.28);
+  }
+  .experience-card__face--back {
+    flex-direction: column;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: linear-gradient(135deg, #D60044, #FF014F);
+    color: #ffffff;
+    box-shadow: 0 18px 50px -24px rgba(214, 0, 68, 0.55);
+    transform: rotateY(180deg);
+  }
+  .experience-card__face--back .experience-card__action {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    flex: 0 0 2.5rem;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+  .experience-card__face--back .experience-card__action:hover {
+    background: #ffffff;
+    color: #D60044;
+  }
+  .experience-card__face--back .experience-card__badge {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+  .experience-card__face--back .experience-card__tag {
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+  .experience-card.is-flipped .experience-card__inner {
+    transform: rotateY(180deg);
+  }
+  @media (max-width: 639px) {
+    .experience-card__face--front {
+      padding: 1rem 0.75rem;
+    }
+    .experience-card__brand {
+      flex-basis: 3.75rem;
+      padding-right: 0.75rem;
+    }
+    .experience-card__monogram {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      font-size: 1.5rem;
+    }
+    .experience-card__content {
+      padding-right: 2.4rem;
+    }
+    .experience-card__action {
+      right: 0.65rem;
+      bottom: 0.65rem;
+    }
+  }
+
+  .portfolio-card {
+    display: block;
+    min-width: 0;
+    perspective: 1400px;
+  }
+  .portfolio-card:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+    border-radius: 1rem;
+  }
+  .portfolio-card__inner {
+    position: relative;
+    display: grid;
+    min-height: 25rem;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .portfolio-card__face {
+    position: relative;
+    grid-area: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .portfolio-card__face--front {
+    background: #111115;
+  }
+  .portfolio-card__face--back {
+    background:
+      radial-gradient(circle at top right, rgba(255, 1, 79, 0.16), transparent 42%),
+      #111115;
+    box-shadow: inset 0 0 0 1px rgba(255, 1, 79, 0.12);
+    transform: rotateY(180deg);
+  }
+  .portfolio-card:not(.is-flipped) .portfolio-card__face--back,
+  .portfolio-card.is-flipped .portfolio-card__face--front {
+    pointer-events: none;
+  }
+  .portfolio-card.is-flipped .portfolio-card__inner,
+  .portfolio-card:focus-within .portfolio-card__inner {
+    transform: rotateY(180deg);
+  }
 }
 
 /* Particle + orb float animations */

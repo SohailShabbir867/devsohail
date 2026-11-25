@@ -1,0 +1,23 @@
+/* TEAM */
+Developer: Sohail Shabbir
+Alias:     Dev Sohail, Sohail IUB, devsohail
+Role:      Full Stack MERN Developer & Software Engineer
+Email:     sohailshabbir2005@gmail.com
+Phone:     +92 329 1729925
+GitHub:    https://github.com/SohailShabbir867
+LinkedIn:  https://www.linkedin.com/in/sohail-shabbir-546a12375/
+Instagram: https://www.instagram.com/sohailshabbir04
+Location:  Rahim Yar Khan, Punjab, Pakistan
+
+/* SITE */
+Name:          devsohail.tech
+URL:           https://devsohail.tech/
+Description:   Portfolio website of Sohail Shabbir – Full Stack MERN Developer from Pakistan
+Language:      English
+Technology:    React.js, Vite, TypeScript, Tailwind CSS, Framer Motion
+Last Updated:  2026-11-25
+
+/* EDUCATION */
+University: The Islamia University of Bahawalpur (IUB)
+Degree:     BS Software Engineering
+Since:      2025

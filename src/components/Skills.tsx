@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { FiCpu, FiSearch, FiShare2 } from 'react-icons/fi';
+import { FiCpu, FiSearch } from 'react-icons/fi';
 import {
   SiBootstrap,
+  SiCloudflare,
   SiCplusplus,
   SiCss,
   SiHtml5,
@@ -11,6 +12,7 @@ import {
   SiMongodb,
   SiN8N,
   SiNodedotjs,
+  SiPython,
   SiReact,
   SiTypescript,
 } from 'react-icons/si';
@@ -104,9 +106,10 @@ const SKILLS: SkillItem[] = [
     image: '/assets/skills/aws.svg',
   },
   {
-    name: 'Basic Networking',
-    description: 'Understand network fundamentals and device connectivity.',
-    icon: FiShare2,
+    name: 'Python',
+    description: 'Write scripts and applications with the Python programming language.',
+    icon: SiPython,
+    color: '#3776AB',
   },
   {
     name: 'C++',
@@ -115,20 +118,17 @@ const SKILLS: SkillItem[] = [
     color: '#00599C',
   },
   {
-    name: 'Canva',
-    description: 'Create visual content with an accessible design toolkit.',
-    image: '/assets/skills/canva.svg',
+    name: 'Cloudflare',
+    description:
+      'Manage secure access with Cloudflare Tunnel, Zero Trust, and Email Routing.',
+    icon: SiCloudflare,
+    color: '#F38020',
   },
   {
     name: 'Linux',
     description: 'Work with Linux systems, tools, and development environments.',
     icon: SiLinux,
     color: '#FCC624',
-  },
-  {
-    name: 'Photoshop',
-    description: 'Edit images and create digital graphics in Photoshop.',
-    image: '/assets/skills/photoshop.svg',
   },
 ];
 

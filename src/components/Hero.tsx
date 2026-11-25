@@ -95,6 +95,7 @@ const Hero = () => {
   return (
     <section
       id="home"
+      aria-label="Sohail Shabbir – Full Stack MERN Developer from Pakistan"
       className="relative w-full min-h-screen flex items-center bg-dark overflow-hidden"
     >
       {/* ── Architectural Dark Facets & Crimson Studio Lighting ── */}
@@ -196,6 +197,19 @@ const Hero = () => {
           />
         ))}
       </div>
+
+      {/* ── SEO Hidden Keywords Block (visible to crawlers, hidden visually) ── */}
+      <span
+        aria-hidden="false"
+        className="sr-only"
+      >
+        Sohail Shabbir – Dev Sohail – Full Stack MERN Developer and Software Engineer from Pakistan.
+        Also known as Sohail IUB (Islamia University of Bahawalpur student).
+        Specializing in React.js, Node.js, MongoDB, Express.js, TypeScript, Next.js, and AI integrations.
+        Based in Rahim Yar Khan, Punjab, Pakistan.
+        Available for hire as freelance developer or full-time software engineer.
+        Portfolio at devsohail.tech.
+      </span>
 
       {/* ── Main Content Container ── */}
       <div className="relative z-10 w-full px-5 sm:px-6 mx-auto max-w-7xl lg:px-8 pt-24 pb-12 lg:py-24">

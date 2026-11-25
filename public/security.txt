@@ -1,0 +1,3 @@
+Contact: mailto:sohailshabbir2005@gmail.com
+Preferred-Languages: en
+Canonical: https://devsohail.tech/security.txt

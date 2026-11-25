@@ -11,6 +11,7 @@ const About = () => {
   return (
     <section
       id="about"
+      aria-labelledby="about-heading"
       className="relative w-full py-20 lg:py-28 bg-dark overflow-hidden"
     >
       {/* Subtle ambient crimson background glow */}
@@ -35,7 +36,7 @@ const About = () => {
           <p className="mb-3 text-xs sm:text-sm font-display font-bold uppercase tracking-[0.28em] text-[#FF014F]">
             About Me
           </p>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
+          <h2 id="about-heading" className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15]">
             Who Am I &amp;
             <br />
             What I <span className="text-[#FF014F]">Engineer</span>

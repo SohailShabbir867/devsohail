@@ -59,13 +59,26 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
           <motion.img
             src="/assets/logo.png"
             alt="Dev Sohail Logo"
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={
+              shouldReduceMotion
+                ? { opacity: 0 }
+                : { opacity: 0, scale: 0.8, rotateX: 16, rotateY: -18 }
+            }
             animate={
               shouldReduceMotion
                 ? { opacity: 1, scale: 1 }
-                : { opacity: 1, scale: [0.95, 1.03, 0.98] }
+                : {
+                    opacity: 1,
+                    scale: [0.95, 1.03, 0.98],
+                    rotateX: [16, 0],
+                    rotateY: [-18, 0],
+                  }
             }
-            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            transition={{
+              duration: shouldReduceMotion ? 0.3 : 1.1,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            style={{ transformPerspective: 700 }}
             className="relative z-10 w-[70px] h-[70px] sm:w-20 sm:h-20 object-contain drop-shadow-[0_0_20px_rgba(255,1,79,0.55)]"
           />
         </div>
