@@ -70,9 +70,9 @@ const WhatsAppWidget = () => {
                   <FaWhatsapp aria-hidden="true" size={21} />
                 </span>
                 <div>
-                  <h2 className="text-sm font-bold text-white">
+                  <p className="text-sm font-bold text-white">
                     Message me on WhatsApp
-                  </h2>
+                  </p>
                   <p className="mt-0.5 text-xs text-white/60">
                     {SITE_DATA.phone}
                   </p>

@@ -35,8 +35,8 @@ const particles = [
 
 const Hero = () => {
   const [textIndex, setTextIndex]         = useState(0);
-  const [displayedText, setDisplayedText] = useState('');
-  const [charIndex, setCharIndex]         = useState(0);
+  const [displayedText, setDisplayedText] = useState(ROLES[0]);
+  const [charIndex, setCharIndex]         = useState(ROLES[0].length);
   const shouldReduceMotion                = useReducedMotion();
 
   /* Zero-rerender 3D hover tilt for the portrait stage */
@@ -95,7 +95,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      aria-label="Sohail Shabbir – Full Stack MERN Developer from Pakistan"
+      aria-label="Sohail Shabbir — Full Stack Developer and Software Engineer"
       className="relative w-full min-h-screen flex items-center bg-dark overflow-hidden"
     >
       {/* ── Architectural Dark Facets & Crimson Studio Lighting ── */}
@@ -198,19 +198,6 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* ── SEO Hidden Keywords Block (visible to crawlers, hidden visually) ── */}
-      <span
-        aria-hidden="false"
-        className="sr-only"
-      >
-        Sohail Shabbir – Dev Sohail – Full Stack MERN Developer and Software Engineer from Pakistan.
-        Also known as Sohail IUB (Islamia University of Bahawalpur student).
-        Specializing in React.js, Node.js, MongoDB, Express.js, TypeScript, Next.js, and AI integrations.
-        Based in Rahim Yar Khan, Punjab, Pakistan.
-        Available for hire as freelance developer or full-time software engineer.
-        Portfolio at devsohail.tech.
-      </span>
-
       {/* ── Main Content Container ── */}
       <div className="relative z-10 w-full px-5 sm:px-6 mx-auto max-w-7xl lg:px-8 pt-24 pb-12 lg:py-24">
         <div className="grid items-center grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-8">
@@ -218,26 +205,26 @@ const Hero = () => {
           {/* ── Left Column (Desktop First / Mobile Second, matching Reeni responsive layout) ── */}
           <div className="order-2 lg:order-1 lg:col-span-6 flex flex-col justify-center text-left">
 
-            {/* Subtle greeting eyebrow (inspired by Reeni "HELLO") */}
+            {/* Greeting & Identity Eyebrow */}
             <motion.p
               initial={{ opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.45, delay: 0.08 }}
-              className="mb-3 text-xs sm:text-sm font-display font-bold uppercase tracking-[0.3em] text-[#CFD0D4]"
+              className="mb-3 text-xs sm:text-sm font-display font-bold uppercase tracking-[0.26em] text-[#CFD0D4]"
             >
-              Hello
+              Sohail Shabbir <span className="text-[#FF014F]">·</span> Dev Sohail
             </motion.p>
 
-            {/* Bold Two-Line Headline */}
+            {/* Primary SEO Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="text-4xl sm:text-5xl md:text-6xl xl:text-[66px] font-extrabold tracking-tight text-white leading-[1.08]"
+              className="text-4xl sm:text-5xl xl:text-[58px] font-extrabold tracking-tight text-white leading-[1.08]"
             >
-              <span className="text-[#FF014F]">I Build</span> Scalable
+              <span className="text-[#FF014F]">Full Stack</span> Developer &amp;
               <br />
-              Web Apps<span className="text-[#FF014F]">.</span>
+              Software Engineer<span className="text-[#FF014F]">.</span>
             </motion.h1>
 
             {/* Typewriter Role Subtitle */}
@@ -245,7 +232,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-4 mb-7 flex items-center gap-3 min-h-[2.25rem]"
+              className="mt-4 mb-3 flex items-center gap-3 min-h-[2.25rem]"
             >
               <span className="inline-block w-7 h-[2px] rounded-full bg-[#FF014F] shrink-0" />
               <p className="text-base sm:text-lg md:text-xl font-semibold tracking-wide gradient-text">
@@ -253,6 +240,16 @@ const Hero = () => {
                 <span className="text-[#FF014F] animate-pulse ml-0.5">|</span>
               </p>
             </motion.div>
+
+            {/* Concise, Human-Readable Value Proposition */}
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.28 }}
+              className="mb-7 max-w-xl text-sm sm:text-[15px] leading-relaxed text-[#A1A1AA]"
+            >
+              Software Engineer at Blizon Technologies and BS Software Engineering student at IUB Pakistan — building scalable React, Next.js, TypeScript, Node.js, MongoDB, and AI web applications.
+            </motion.p>
 
             {/* Two Side-by-Side Pill CTA Buttons with icon-reverse hover */}
             <motion.div
@@ -402,11 +399,14 @@ const Hero = () => {
                 className="relative z-10 w-full flex justify-center"
               >
                 <img
-                  src="/assets/hero%20section%20image.png"
-                  alt="Sohail Shabbir – Full Stack MERN Developer"
-                  title="Sohail Shabbir | devsohail.tech"
+                  src="/assets/hero-portrait.webp"
+                  alt="Sohail Shabbir — Full Stack Developer and Software Engineer"
+                  title="Sohail Shabbir | Full Stack Developer & Software Engineer"
+                  width={516}
+                  height={483}
                   loading="eager"
                   decoding="sync"
+                  {...({ fetchpriority: 'high' } as Record<string, string>)}
                   style={{
                     WebkitMaskImage: 'linear-gradient(to bottom, black 74%, transparent 100%)',
                     maskImage: 'linear-gradient(to bottom, black 74%, transparent 100%)',

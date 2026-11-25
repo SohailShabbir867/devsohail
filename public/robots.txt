@@ -1,45 +1,5 @@
-# ════════════════════════════════════════════════════════
-#  robots.txt — devsohail.tech
-#  Sohail Shabbir | Full Stack MERN Developer | Pakistan
-#  Last updated: 2026-11-25
-# ════════════════════════════════════════════════════════
-
-# Allow all major search engine crawlers
+# robots.txt — https://devsohail.tech/
 User-agent: *
 Allow: /
 
-# Block access to build artifacts and dev config
-Disallow: /node_modules/
-Disallow: /.env
-Disallow: /.env.local
-Disallow: /.env.example
-Disallow: /dist/
-Disallow: /src/
-
-# Allow Googlebot full crawl
-User-agent: Googlebot
-Allow: /
-
-# Allow Googlebot-Image to index all images
-User-agent: Googlebot-Image
-Allow: /assets/
-
-# Allow Bingbot
-User-agent: Bingbot
-Allow: /
-
-# Block AI training crawlers (optional — remove if you want AI to index)
-User-agent: GPTBot
-Disallow: /
-
-User-agent: CCBot
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-# Crawl rate hint (seconds between requests)
-Crawl-delay: 1
-
-# Sitemap location
 Sitemap: https://devsohail.tech/sitemap.xml

@@ -149,9 +149,11 @@ const About = () => {
               {/* Studio Portrait Frame */}
               <div className="relative z-10 rounded-2xl overflow-hidden border border-white/10 group-hover:border-[#FF014F]/50 shadow-2xl shadow-black/80 transition-colors duration-500 bg-dark-100">
                 <img
-                  src="/assets/about%20section%20image.png"
-                  alt="Sohail Shabbir – Full Stack Developer"
+                  src="/assets/about-portrait.webp"
+                  alt="Sohail Shabbir — Full Stack Developer and Software Engineer from Pakistan"
                   title="Sohail Shabbir | About Me"
+                  width={1040}
+                  height={791}
                   loading="lazy"
                   decoding="async"
                   className="w-full h-auto aspect-[4/3] object-cover object-center select-none transition-transform duration-500 group-hover:scale-[1.03]"

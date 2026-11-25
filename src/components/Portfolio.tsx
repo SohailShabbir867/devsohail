@@ -20,7 +20,7 @@ const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     title: 'MERN Stack Blogging Website',
     description:
       'Full-stack MERN blogging platform featuring JWT authentication, rich text publishing, real-time chat interactions, and an integrated TypeScript MCP server for AI blog posting.',
-    image: '/assets/projects/dailyblogs.png',
+    image: '/assets/projects/dailyblogs.webp',
     live: 'https://dailyblogs.website/',
     github: 'https://github.com/SohailShabbir867/',
     tags: ['React.js', 'Node.js', 'MongoDB', 'Express', 'MCP Server'],
@@ -30,7 +30,7 @@ const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     title: 'RoomBridge - Room & Hostel Finder',
     description:
       'Room and accommodation discovery platform built on the MERN stack, with real-time chat, geo-filtering, and verified property listings.',
-    image: '/assets/projects/roombridge.png',
+    image: '/assets/projects/roombridge.webp',
     live: 'https://roombridge.site',
     github: 'https://github.com/SohailShabbir867/RoomBridge',
     tags: ['React.js', 'Tailwind CSS', 'Socket.io', 'MongoDB'],
@@ -40,7 +40,7 @@ const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     title: 'AI ResearchFlow',
     description:
       'Autonomous AI research engine powered by Google Gemini and arXiv APIs. It orchestrates parallel search, synthesizes academic literature, and generates structured reports.',
-    image: '/assets/projects/researchflow.jpg',
+    image: '/assets/projects/researchflow.webp',
     live: 'https://sohailshabbir867.github.io/ai-researchflow/',
     github: 'https://github.com/SohailShabbir867/ai-researchflow',
     tags: ['React.js', 'Gemini', 'arXiv API', 'AI Agents'],
@@ -100,7 +100,7 @@ const PORTFOLIO_PROJECTS: PortfolioProject[] = [
     title: 'Blizon Internal Portal',
     description:
       'Blizon’s internal portal brings EOS workflows and team chat together as a Slack replacement, with audio and video calling, AI-powered MCP proposal creation, and meeting summaries.',
-    image: '/assets/projects/blizon-portal.png',
+    image: '/assets/projects/blizon-portal.webp',
     imageFit: 'contain',
     live: 'https://portal.blizon.tech',
     liveLabel: 'Open Portal',
@@ -164,7 +164,7 @@ const PortfolioCard = ({
         <div className="portfolio-card__face portfolio-card__face--front">
           <img
             src={project.image}
-            alt={`${project.title} project preview`}
+            alt={`${project.title} — web application built by Sohail Shabbir`}
             width={600}
             height={400}
             loading="lazy"

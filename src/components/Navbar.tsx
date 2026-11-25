@@ -73,7 +73,9 @@ const Navbar = () => {
           >
             <motion.img
               src="/assets/logo.png"
-              alt="DevSohail Logo"
+              alt="Dev Sohail — Sohail Shabbir Logo"
+              width={40}
+              height={40}
               whileHover={{ scale: 1.1, rotate: -4 }}
               transition={{ type: 'spring', stiffness: 340, damping: 18 }}
               className="w-9 h-9 md:w-10 md:h-10 object-contain drop-shadow-[0_0_14px_rgba(255,1,79,0.45)] group-hover:drop-shadow-[0_0_22px_rgba(255,1,79,0.75)] transition-all duration-300"

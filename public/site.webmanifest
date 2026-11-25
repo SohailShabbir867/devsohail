@@ -1,7 +1,7 @@
 {
-  "name": "Dev Sohail – Sohail Shabbir | Full Stack MERN Developer",
+  "name": "Sohail Shabbir — Full Stack Developer & Software Engineer",
   "short_name": "Dev Sohail",
-  "description": "Sohail Shabbir (Dev Sohail) – Full Stack MERN Developer & Software Engineer from Pakistan. React.js, Node.js, MongoDB, TypeScript.",
+  "description": "Sohail Shabbir (Dev Sohail) — Full Stack Developer and Software Engineer from Pakistan specializing in React, Next.js, TypeScript, Node.js, and MongoDB.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0A0A0E",
@@ -14,12 +14,6 @@
   "icons": [
     {
       "src": "/assets/logo.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/assets/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -27,10 +21,10 @@
   ],
   "screenshots": [
     {
-      "src": "/assets/og-cover.png",
+      "src": "/assets/og-cover.jpg",
       "sizes": "1200x630",
-      "type": "image/png",
-      "label": "Dev Sohail – Full Stack MERN Developer Portfolio"
+      "type": "image/jpeg",
+      "label": "Sohail Shabbir — Full Stack Developer & Software Engineer Portfolio"
     }
   ]
 }

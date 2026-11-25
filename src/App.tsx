@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { AnimatePresence, MotionConfig } from 'framer-motion';
-import LoadingScreen from './components/LoadingScreen';
+import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,20 +9,12 @@ import Hobbies from './components/Hobbies';
 import Portfolio from './components/Portfolio';
 import Contact from './components/Contact';
 import WhatsAppWidget from './components/WhatsAppWidget';
-import { NAV_ITEMS, SITE_DATA } from './data/constants';
+import { NAV_ITEMS, SITE_DATA, SOCIAL_LINKS } from './data/constants';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <MotionConfig reducedMotion="user">
       <div className="bg-dark min-h-screen">
-        <AnimatePresence mode="wait">
-          {isLoading && (
-            <LoadingScreen key="loader" onComplete={() => setIsLoading(false)} />
-          )}
-        </AnimatePresence>
-
         <Navbar />
         <main>
           <Hero />
@@ -78,14 +68,32 @@ function App() {
 
             <div className="mt-7 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-5 text-center sm:flex-row sm:text-left">
               <p className="text-xs text-[#71717A]">
-                © {new Date().getFullYear()} {SITE_DATA.name}. All rights reserved.
+                © {new Date().getFullYear()} {SITE_DATA.name} · {SITE_DATA.jobTitle}. All rights reserved.
               </p>
-              <a
-                href="#home"
-                className="focus-ring rounded text-xs font-medium text-[#A1A1AA] transition-colors hover:text-[#FF3B7B]"
-              >
-                Back to top
-              </a>
+              <div className="flex items-center gap-4 text-xs font-medium text-[#A1A1AA]">
+                <a
+                  href={SOCIAL_LINKS.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="focus-ring rounded transition-colors hover:text-[#FF3B7B]"
+                >
+                  GitHub
+                </a>
+                <a
+                  href={SOCIAL_LINKS.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="focus-ring rounded transition-colors hover:text-[#FF3B7B]"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href="#home"
+                  className="focus-ring rounded transition-colors hover:text-[#FF3B7B]"
+                >
+                  Back to top
+                </a>
+              </div>
             </div>
           </div>
         </footer>

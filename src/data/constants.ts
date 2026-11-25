@@ -56,6 +56,7 @@ export const SITE_DATA = {
   firstName:   'Sohail',
   lastName:    'Shabbir',
   name:        'Sohail Shabbir',
+  jobTitle:    'Full Stack Developer & Software Engineer',
   email:     'sohailshabbir2005@gmail.com',
   phone:     '+92 329 1729925',
   location:  'Rahim Yar Khan, Pakistan',
@@ -72,22 +73,22 @@ export const STATS = [
 
 export const ROLES = [
   'Full Stack MERN Developer',
-  'TypeScript MCP Server Engineer',
+  'TypeScript & Next.js Engineer',
+  'MCP Server & AI Engineer',
   'React.js & Node.js Developer',
-  'AI & Web Integration Developer',
   'MongoDB & Express Architect',
   'UI/UX & Frontend Engineer',
 ];
 
 export const ABOUT_INTRO =
-  'Building scalable MERN web apps, AI integrations, and TypeScript MCP servers.';
+  'Full Stack Developer & Software Engineer building scalable MERN web apps, AI integrations, and TypeScript MCP servers.';
 
 export const ABOUT_HIGHLIGHTS: AboutHighlight[] = [
   {
     id: 'who-am-i',
     title: 'Who Am I?',
     description:
-      'I am Sohail Shabbir, a Full Stack MERN Developer based in Rahim Yar Khan, Pakistan, focused on building fast, scalable, and user-centric web products with MongoDB, Express.js, React.js, and Node.js.',
+      'I am Sohail Shabbir (Dev Sohail), a Full Stack Developer and Software Engineer based in Rahim Yar Khan, Pakistan, studying BS Software Engineering at The Islamia University of Bahawalpur (IUB) and engineering production web products at Blizon Technologies with MongoDB, Express.js, React.js, Next.js, TypeScript, and Node.js.',
   },
   {
     id: 'ai-mcp',
